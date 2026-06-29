@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Brew Cafe | Fresh Coffee, Fresh Conversations</title>
+    <meta name="description" content="Urban Brew Cafe serves handcrafted coffee, artisan pastries, and healthy breakfast options in a cozy modern atmosphere in Bhubaneswar.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#6F4E37',   /* Coffee Brown */
+                            secondary: '#FFF8F0', /* Creamy White */
+                            accent: '#D4A373',    /* Warm Tan */
+                            dark: '#2C1B10'       /* Deep Espresso */
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-brand-secondary text-brand-dark font-sans antialiased selection:bg-brand-accent selection:text-white">
+
+    <header id="navbar" class="fixed top-0 left-0 w-full z-50 bg-brand-secondary/90 backdrop-blur-md border-b border-brand-primary/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#hero" class="flex items-center space-x-2 group">
+                    <i class="fa-solid fa-mug-hot text-2xl text-brand-primary group-hover:scale-110 transition-transform"></i>
+                    <span class="font-extrabold text-xl tracking-tight text-brand-dark">Urban <span class="text-brand-primary">Brew</span></span>
+                </a>
+
+                <nav class="hidden md:flex space-x-8 font-medium text-sm text-brand-dark/80">
+                    <a href="#about" class="hover:text-brand-primary transition-colors">About</a>
+                    <a href="#services" class="hover:text-brand-primary transition-colors">Menu & Services</a>
+                    <a href="#features" class="hover:text-brand-primary transition-colors">Features</a>
+                    <a href="#gallery" class="hover:text-brand-primary transition-colors">Gallery</a>
+                    <a href="#testimonials" class="hover:text-brand-primary transition-colors">Reviews</a>
+                    <a href="#faq" class="hover:text-brand-primary transition-colors">FAQ</a>
+                    <a href="#contact" class="hover:text-brand-primary transition-colors">Contact</a>
+                </nav>
+
+                <div class="hidden md:block">
+                    <a href="https://wa.me/919876543210" target="_blank" class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold bg-brand-primary text-white hover:bg-brand-accent transition-colors shadow-sm">
+                        <i class="fa-brands fa-whatsapp mr-2 text-base"></i> Book Table
+                    </a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-brand-dark focus:outline-none p-2" aria-label="Toggle Menu">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-secondary border-b border-brand-primary/10">
+            <div class="px-4 pt-2 pb-6 space-y-3 font-medium shadow-inner">
+                <a href="#about" class="block py-2 text-brand-dark hover:text-brand-primary">About</a>
+                <a href="#services" class="block py-2 text-brand-dark hover:text-brand-primary">Menu & Services</a>
+                <a href="#features" class="block py-2 text-brand-dark hover:text-brand-primary">Features</a>
+                <a href="#gallery" class="block py-2 text-brand-dark hover:text-brand-primary">Gallery</a>
+                <a href="#testimonials" class="block py-2 text-brand-dark hover:text-brand-primary">Reviews</a>
+                <a href="#faq" class="block py-2 text-brand-dark hover:text-brand-primary">FAQ</a>
+                <a href="#contact" class="block py-2 text-brand-dark hover:text-brand-primary">Contact</a>
+                <a href="https://wa.me/919876543210" target="_blank" class="w-full text-center inline-flex items-center justify-center px-5 py-3 rounded-full text-sm font-semibold bg-brand-primary text-white hover:bg-brand-accent transition-colors shadow-sm">
+                    <i class="fa-brands fa-whatsapp mr-2 text-base"></i> Book Table via WhatsApp
+                </a>
+            </div>
+        </div>
+    </header>
+
+
+    <section id="hero" class="pt-24 min-h-screen flex items-center bg-cover bg-center relative" style="background-image: linear-gradient(rgba(44, 27, 16, 0.7), rgba(44, 27, 16, 0.5)), url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=1920');">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full relative z-10 text-white">
+            <div class="max-w-3xl space-y-6">
+                <span class="inline-block bg-brand-accent/30 border border-brand-accent text-brand-accent px-4 py-1.5 rounded-full text-sm font-semibold uppercase tracking-wider backdrop-blur-sm">
+                    Welcome to Urban Brew
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-tight">
+                    Fresh Coffee,<br><span class="text-brand-accent">Fresh Conversations</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-brand-secondary/90 max-w-xl font-light">
+                    Urban Brew Cafe serves handcrafted coffee, artisan pastries, and healthy breakfast options in a cozy modern atmosphere.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#services" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-base font-semibold bg-brand-accent text-brand-dark hover:bg-brand-secondary hover:text-brand-dark transition-all duration-300 shadow-lg text-center">
+                        Explore Our Menu
+                    </a>
+                    <a href="#contact" class="inline-flex items-center justify-center px-8 py-3.5 rounded-full text-base font-semibold border-2 border-white text-white hover:bg-white hover:text-brand-dark transition-all duration-300 text-center">
+                        Find Our Cafe
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&q=80&w=800" alt="Cozy Cafe Interior" class="rounded-3xl shadow-2xl w-full object-cover h-[500px]">
+                <div class="absolute -bottom-6 -right-6 bg-brand-primary text-white p-8 rounded-3xl shadow-xl hidden sm:block max-w-[240px]">
+                    <p class="text-4xl font-black text-brand-accent">7+</p>
+                    <p class="text-sm font-medium text-brand-secondary/80 mt-1">Years of crafting pristine gourmet experiences & community hubs.</p>
+                </div>
+            </div>
+            <div class="space-y-6 lg:pl-6">
+                <span class="text-brand-primary font-bold uppercase tracking-widest text-sm">Our Essence</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-dark">A Space Designed for Coffee Connoisseurs</h2>
+                <p class="text-brand-dark/70 leading-relaxed text-lg">
+                    Nestled in the vibrant heart of KIIT Road, Bhubaneswar, Urban Brew Cafe isn't just about premium fuel for your body; it's a sanctuary for your mind. We emphasize sourcing sustainable beans and pairing them with exquisite food profiles.
+                </p>
+                <p class="text-brand-dark/70 leading-relaxed">
+                    Whether you are seeking a quiet corner to power through your remote work day, celebrating milestones with loved ones, or looking to discover notes of exceptional dark roasts, we cultivate an ambient ecosystem built for you.
+                </p>
+                <div class="pt-4">
+                    <a href="#features" class="inline-flex items-center font-bold text-brand-primary hover:text-brand-accent transition-colors group">
+                        Discover the Experience <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="services" class="bg-brand-primary text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-accent font-bold uppercase tracking-widest text-sm">What We Serve</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Our Curated Specialities</h2>
+                <p class="text-brand-secondary/70">Every item is crafted systematically with high-end ingredients, pure passion, and strict standards of gastronomic excellence.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-dark/40 border border-white/10 rounded-3xl overflow-hidden shadow-lg hover:translate-y-[-8px] transition-all duration-300 group">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=600" alt="Specialty Coffee" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 space-y-3">
+                        <div class="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent mb-4">
+                            <i class="fa-solid fa-coffee-bean text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Specialty Coffee</h3>
+                        <p class="text-brand-secondary/70 text-sm leading-relaxed">Premium handcrafted espresso, cappuccino, and smooth cold brews infused with premium flavors.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark/40 border border-white/10 rounded-3xl overflow-hidden shadow-lg hover:translate-y-[-8px] transition-all duration-300 group">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80&w=600" alt="Fresh Bakery" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 space-y-3">
+                        <div class="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent mb-4">
+                            <i class="fa-solid fa-croissant text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Fresh Bakery</h3>
+                        <p class="text-brand-secondary/70 text-sm leading-relaxed">Daily baked warm croissants, cakes, gourmet cookies, and wholesome artisan bread variants.</p>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark/40 border border-white/10 rounded-3xl overflow-hidden shadow-lg hover:translate-y-[-8px] transition-all duration-300 group">
+                    <div class="h-60 overflow-hidden relative">
+                        <img src="https://images.unsplash.com/photo-1494390248081-4e521a5940db?auto=format&fit=crop&q=80&w=600" alt="Healthy Breakfast" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-8 space-y-3">
+                        <div class="w-12 h-12 rounded-full bg-brand-accent/20 flex items-center justify-center text-brand-accent mb-4">
+                            <i class="fa-solid fa-seedling text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Healthy Breakfast</h3>
+                        <p class="text-brand-secondary/70 text-sm leading-relaxed">Nutritious macro bowls, delicious pressed sandwiches, and pure organic power beverages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="features" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="space-y-6">
+                <span class="text-brand-primary font-bold uppercase tracking-widest text-sm">Why Choose Us</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-dark">Elevating the Standards of Coffee Culture</h2>
+                <p class="text-brand-dark/70 leading-relaxed">
+                    We see ourselves as structural architects of comfort. Urban Brew focuses deeply on delivering holistic comfort alongside state-of-the-art cafe assets.
+                </p>
+
+                <div class="space-y-4 pt-4">
+                    <div class="flex items-start space-x-4">
+                        <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-brand-accent/20 text-brand-primary flex items-center justify-center">
+                            <i class="fa-solid fa-check text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-dark">Premium Ethically Sourced Beans</h4>
+                            <p class="text-sm text-brand-dark/70">Harvested carefully from certified sustainable coffee farms across the finest regions.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-brand-accent/20 text-brand-primary flex items-center justify-center">
+                            <i class="fa-solid fa-check text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-dark">Experienced Professional Baristas</h4>
+                            <p class="text-sm text-brand-dark/70">Masterful pouring techniques to unlock explicit flavor notes and rich espresso extraction.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <div class="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-brand-accent/20 text-brand-primary flex items-center justify-center">
+                            <i class="fa-solid fa-check text-sm"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-brand-dark">Comforting Work & Chill Environment</h4>
+                            <p class="text-sm text-brand-dark/70">Equipped with reliable ergonomics, high-speed networking paths, and tranquil aesthetics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative grid grid-cols-2 gap-4">
+                <div class="space-y-4">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&q=80&w=400" alt="Pouring Espresso" class="rounded-2xl shadow-md w-full object-cover h-64">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=400" alt="Cafe Mug close up" class="rounded-2xl shadow-md w-full object-cover h-44">
+                </div>
+                <div class="space-y-4 pt-8">
+                    <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&w=400" alt="People at cafe" class="rounded-2xl shadow-md w-full object-cover h-44">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&q=80&w=400" alt="Coffee beans" class="rounded-2xl shadow-md w-full object-cover h-64">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="bg-brand-dark text-white py-16 border-y border-brand-accent/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-4xl sm:text-5xl font-extrabold text-brand-accent counter" data-target="15000">0</p>
+                <p class="text-xs sm:text-sm text-brand-secondary/60 uppercase tracking-widest font-semibold mt-2">Cups Poured</p>
+            </div>
+            <div>
+                <p class="text-4xl sm:text-5xl font-extrabold text-brand-accent counter" data-target="25">0</p>
+                <p class="text-xs sm:text-sm text-brand-secondary/60 uppercase tracking-widest font-semibold mt-2">Pastry Types</p>
+            </div>
+            <div>
+                <p class="text-4xl sm:text-5xl font-extrabold text-brand-accent counter" data-target="4800">0</p>
+                <p class="text-xs sm:text-sm text-brand-secondary/60 uppercase tracking-widest font-semibold mt-2">Happy Customers</p>
+            </div>
+            <div>
+                <p class="text-4xl sm:text-5xl font-extrabold text-brand-accent counter" data-target="5">0</p>
+                <p class="text-xs sm:text-sm text-brand-secondary/60 uppercase tracking-widest font-semibold mt-2">Star Ratings</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="gallery" class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+            <span class="text-brand-primary font-bold uppercase tracking-widest text-sm">Visual Journey</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-dark">Snapshots of Urban Brew</h2>
+            <p class="text-brand-dark/70">Take a virtual peek inside our warm setting, artistic bakery selections, and dynamic daily actions.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="overflow-hidden rounded-2xl h-80 shadow-md group relative">
+                <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=500" alt="Latte Art Close up" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white p-4">
+                    <p class="font-bold text-lg border-b border-brand-accent pb-1">Signature Latte Craft</p>
+                </div>
+            </div>
+            <div class="overflow-hidden rounded-2xl h-80 shadow-md group relative">
+                <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?auto=format&fit=crop&q=80&w=500" alt="Cafe interior" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white p-4">
+                    <p class="font-bold text-lg border-b border-brand-accent pb-1">Cozy Seating Spaces</p>
+                </div>
+            </div>
+            <div class="overflow-hidden rounded-2xl h-80 shadow-md group relative">
+                <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&q=80&w=500" alt="Freshly baked dessert" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white p-4">
+                    <p class="font-bold text-lg border-b border-brand-accent pb-1">Artisan Pastries</p>
+                </div>
+            </div>
+            <div class="overflow-hidden rounded-2xl h-80 shadow-md group relative">
+                <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=500" alt="Iced cold brew" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white p-4">
+                    <p class="font-bold text-lg border-b border-brand-accent pb-1">Crafted Iced Pour-overs</p>
+                </div>
+            </div>
+            <div class="overflow-hidden rounded-2xl h-80 shadow-md group relative">
+                <img src="https://images.unsplash.com/photo-1574926053821-79c5e338a933?auto=format&fit=crop&q=80&w=500" alt="People laughing over breakfast" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white p-4">
+                    <p class="font-bold text-lg border-b border-brand-accent pb-1">Fresh Conversations</p>
+                </div>
+            </div>
+            <div class="overflow-hidden rounded-2xl h-80 shadow-md group relative">
+                <img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?auto=format&fit=crop&q=80&w=500" alt="Espresso shot pulling" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white p-4">
+                    <p class="font-bold text-lg border-b border-brand-accent pb-1">Fine Espresso Extractions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="testimonials" class="bg-brand-primary text-white py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-accent font-bold uppercase tracking-widest text-sm">Customer Stories</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Loved by the Community</h2>
+                <p class="text-brand-secondary/70">Hear directly from the wonderful people who choose us day in and day out for their coffee fixes.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-brand-dark/30 border border-white/10 p-8 rounded-3xl relative flex flex-col justify-between">
+                    <i class="fa-solid fa-quote-left text-brand-accent text-3xl opacity-30 absolute top-6 left-6"></i>
+                    <p class="text-brand-secondary/90 italic pt-6 leading-relaxed mb-6">
+                        "Best coffee shop in Bhubaneswar. Amazing atmosphere and friendly staff."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-accent text-brand-dark font-bold flex items-center justify-center">AS</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Aarav Sharma</h4>
+                            <div class="text-brand-accent text-xs mt-0.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark/30 border border-white/10 p-8 rounded-3xl relative flex flex-col justify-between">
+                    <i class="fa-solid fa-quote-left text-brand-accent text-3xl opacity-30 absolute top-6 left-6"></i>
+                    <p class="text-brand-secondary/90 italic pt-6 leading-relaxed mb-6">
+                        "The pastries are incredible and the coffee quality is consistently excellent."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-accent text-brand-dark font-bold flex items-center justify-center">PD</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Priya Das</h4>
+                            <div class="text-brand-accent text-xs mt-0.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark/30 border border-white/10 p-8 rounded-3xl relative flex flex-col justify-between">
+                    <i class="fa-solid fa-quote-left text-brand-accent text-3xl opacity-30 absolute top-6 left-6"></i>
+                    <p class="text-brand-secondary/90 italic pt-6 leading-relaxed mb-6">
+                        "Perfect place for work meetings and weekend hangouts."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-brand-accent text-brand-dark font-bold flex items-center justify-center">RM</div>
+                        <div>
+                            <h4 class="font-bold text-sm">Rohit Mishra</h4>
+                            <div class="text-brand-accent text-xs mt-0.5"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="faq" class="py-24 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+        <div class="text-center mb-16 space-y-4">
+            <span class="text-brand-primary font-bold uppercase tracking-widest text-sm">Common Queries</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-brand-dark">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="space-y-4">
+            <div class="bg-white rounded-2xl shadow-sm border border-brand-primary/10 overflow-hidden">
+                <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+                    <span class="font-bold text-brand-dark">Do you offer free WiFi?</span>
+                    <i class="fa-solid fa-chevron-down text-brand-primary transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content hidden px-6 pb-5 text-brand-dark/70 text-sm leading-relaxed border-t border-brand-primary/5 pt-3">
+                    Yes, high-speed corporate grade WiFi is fully available for all customers to ensure smooth working or browsing conditions.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-brand-primary/10 overflow-hidden">
+                <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+                    <span class="font-bold text-brand-dark">Can I reserve tables for groups?</span>
+                    <i class="fa-solid fa-chevron-down text-brand-primary transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content hidden px-6 pb-5 text-brand-dark/70 text-sm leading-relaxed border-t border-brand-primary/5 pt-3">
+                    Absolutely! Corporate groups or casual assemblies can book arrangements dynamically. Reservations can be processed quickly directly through our business WhatsApp.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-brand-primary/10 overflow-hidden">
+                <button class="faq-btn w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none">
+                    <span class="font-bold text-brand-dark">Do you provide home delivery?</span>
+                    <i class="fa-solid fa-chevron-down text-brand-primary transition-transform duration-300"></i>
+                </button>
+                <div class="faq-content hidden px-6 pb-5 text-brand-dark/70 text-sm leading-relaxed border-t border-brand-primary/5 pt-3">
+                    Yes, fresh delivery pipelines operate systematically within selected sectors of Bhubaneswar. Contact us to learn if your location is fully integrated.
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-24 reveal">
+        <div class="bg-gradient-to-br from-brand-primary to-brand-dark text-white rounded-[2.5rem] p-8 sm:p-12 lg:p-16 text-center relative overflow-hidden shadow-2xl">
+            <div class="absolute -top-12 -left-12 w-44 h-44 bg-brand-accent/10 rounded-full blur-xl"></div>
+            <div class="absolute -bottom-12 -right-12 w-64 h-64 bg-brand-accent/10 rounded-full blur-xl"></div>
+            
+            <div class="max-w-2xl mx-auto space-y-6 relative z-10">
+                <h2 class="text-3xl sm:text-5xl font-black tracking-tight leading-tight">Ready for the perfect coffee experience?</h2>
+                <p class="text-brand-secondary/80 text-base sm:text-lg font-light">
+                    Join us today for freshly prepared beverages and delightful pastry choices. Drop by or request premium catering packages for your custom events over WhatsApp!
+                </p>
+                <div class="pt-4">
+                    <a href="https://wa.me/919876543210" target="_blank" class="inline-flex items-center justify-center px-8 py-4 rounded-full bg-brand-accent text-brand-dark hover:bg-brand-secondary font-bold shadow-lg transition-all transform hover:scale-105">
+                        <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> Connect Instantly via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="contact" class="py-24 bg-brand-dark text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <span class="text-brand-accent font-bold uppercase tracking-widest text-sm">Find Us</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Visit Urban Brew Cafe</h2>
+                        <p class="text-brand-secondary/60">Stop by for your daily morning ritual or plan out an energetic evening meeting.</p>
+                    </div>
+
+                    <div class="space-y-4 text-sm sm:text-base">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-brand-primary text-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span>KIIT Road, Bhubaneswar, Odisha, India</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-brand-primary text-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <a href="tel:+919876543210" class="hover:text-brand-accent transition-colors">+91 98765 43210</a>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-brand-primary text-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <a href="mailto:hello@urbanbrewcafe.com" class="hover:text-brand-accent transition-colors">hello@urbanbrewcafe.com</a>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 bg-brand-primary text-brand-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <span>Mon - Sun: 7:00 AM - 10:00 PM</span>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-64 rounded-2xl overflow-hidden shadow-md border border-white/10">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m2!1s0x3a1909ef0a41d0dd%3A0xbc2a6d55986ec661!2sKIIT%20Road%2C%20Bhubaneswar%2C%20Odisha!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="bg-brand-primary/40 p-8 sm:p-10 rounded-3xl border border-white/10 shadow-xl space-y-6">
+                    <h3 class="text-xl sm:text-2xl font-bold">Send a Message</h3>
+                    <p class="text-sm text-brand-secondary/70">Fill in the fields below. Submitting will redirect your dynamic message data directly to our active WhatsApp account.</p>
+                    
+                    <form id="whatsappForm" class="space-y-5 text-brand-dark">
+                        <div>
+                            <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-brand-secondary/80 mb-2">Your Name</label>
+                            <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-accent text-sm transition-all" placeholder="Enter full name">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-brand-secondary/80 mb-2">Phone Number</label>
+                            <input type="tel" id="phone" required class="w-full px-4 py-3 rounded-xl bg-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-accent text-sm transition-all" placeholder="Enter contact number">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-brand-secondary/80 mb-2">Message Description</label>
+                            <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-xl bg-brand-secondary focus:outline-none focus:ring-2 focus:ring-brand-accent text-sm transition-all resize-none" placeholder="How can we help you?"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-brand-accent hover:bg-brand-secondary text-brand-dark font-bold py-3.5 px-6 rounded-xl transition-all shadow-md flex items-center justify-center space-x-2">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Submit via WhatsApp</span>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="bg-brand-dark text-white/60 text-sm py-12 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center space-x-2 text-white">
+                <i class="fa-solid fa-mug-hot text-xl text-brand-accent"></i>
+                <span class="font-bold tracking-tight">Urban Brew Cafe</span>
+            </div>
+
+            <div class="text-center md:text-left text-xs sm:text-sm">
+                &copy; 2026 Urban Brew Cafe. Crafted meticulously. All Rights Reserved.
+            </div>
+
+            <div class="flex space-x-4 text-base">
+                <a href="https://facebook.com/urbanbrewcafe" target="_blank" class="hover:text-brand-accent transition-colors" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://instagram.com/urbanbrewcafe" target="_blank" class="hover:text-brand-accent transition-colors" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/urbanbrewcafe" target="_blank" class="hover:text-brand-accent transition-colors" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="https://youtube.com/@urbanbrewcafe" target="_blank" class="hover:text-brand-accent transition-colors" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://linkedin.com/company/urbanbrewcafe" target="_blank" class="hover:text-brand-accent transition-colors" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+
+        </div>
+    </footer>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            
+            // 1. MOBILE NAVBAR MENU TOGGLE
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                if (mobileMenu.classList.contains('hidden')) {
+                    icon.className = 'fa-solid fa-bars text-2xl';
+                } else {
+                    icon.className = 'fa-solid fa-xmark text-2xl';
+                }
+            });
+
+            // Close mobile menu when clicking any inner link
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.querySelector('i').className = 'fa-solid fa-bars text-2xl';
+                });
+            });
+
+
+            // 2. STICKY NAVBAR BACKDROP CONTROL ON SCROLL
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('py-2', 'shadow-md');
+                    navbar.classList.remove('py-0');
+                } else {
+                    navbar.classList.remove('py-2', 'shadow-md');
+                }
+            });
+
+
+            // 3. SCROLL REVEAL ANIMATIONS
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                reveals.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const revealPoint = 100;
+                    if (elementTop < windowHeight - revealPoint) {
+                        element.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Trigger instantly on load loop
+
+
+            // 4. ANIMATED STATISTICS COUNTERS
+            const counters = document.querySelectorAll('.counter');
+            const speed = 150; 
+
+            const startCounters = () => {
+                counters.forEach(counter => {
+                    const animate = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const data = +counter.innerText;
+                        const increment = Math.ceil(target / speed);
+
+                        if (data < target) {
+                            counter.innerText = data + increment;
+                            setTimeout(animate, 15);
+                        } else {
+                            // Format clean end values
+                            if(target === 5) {
+                                counter.innerText = "5.0";
+                            } else if (target >= 1000) {
+                                counter.innerText = Math.floor(target/1000) + "K+";
+                            } else {
+                                counter.innerText = target + "+";
+                            }
+                        }
+                    };
+                    animate();
+                });
+            };
+
+            // Trigger numbers once they roll onto the user's viewport screen
+            let countersAnimated = false;
+            const checkCounterPosition = () => {
+                if(counters.length === 0) return;
+                const pos = counters[0].getBoundingClientRect().top;
+                if(pos < window.innerHeight - 50 && !countersAnimated) {
+                    startCounters();
+                    countersAnimated = true;
+                }
+            };
+            window.addEventListener('scroll', checkCounterPosition);
+            checkCounterPosition();
+
+
+            // 5. FAQ ACCORDION LOGIC
+            const faqButtons = document.querySelectorAll('.faq-btn');
+            faqButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('i');
+                    
+                    // Toggle visibility
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+
+
+            // 6. CONTACT FORM SUBMISSION TO WHATSAPP
+            const whatsappForm = document.getElementById('whatsappForm');
+            whatsappForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const nameValue = document.getElementById('name').value.trim();
+                const phoneValue = document.getElementById('phone').value.trim();
+                const msgValue = document.getElementById('message').value.trim();
+                
+                // Build text message encoding parameters cleanly
+                const encodedText = encodeURIComponent(
+                    `Hello Urban Brew Cafe,\n\nMy Name: ${nameValue}\nPhone Number: ${phoneValue}\nMessage: ${msgValue}`
+                );
+                
+                const whatsappUrl = `https://wa.me/919876543210?text=${encodedText}`;
+                
+                // Redirect user to WhatsApp link endpoint
+                window.open(whatsappUrl, '_blank');
+            });
+
+        });
+    </script>
+
+</body>
+</html>
